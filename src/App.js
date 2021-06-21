@@ -2,26 +2,19 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import Main from './Main';
-//import HornedBeast from './HornedBeast';
-class App extends React.Component{
-render(){
- /* let hornedBeast = [
-    {
-        title:"UniWhal",
-        description:"A unicorn and a narwhal nuzzling their horns"
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-    },
-    {
-        title:"Rhino Family",
-        description:"Mother (or father) rhino with two babies"
-    }
-]*/
+
+class App extends React.Component{
+ 
+render(){
+ 
   return(
     <div>
-      <Header/>
+      <Header class='bg'/>
       
-        <Main/>
-    <Footer/>
+        <Main class='bg' />
+    <Footer class='bg'/>
     </div>
     
   )
