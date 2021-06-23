@@ -7,7 +7,8 @@ import {Card}from 'react-bootstrap';
 // import {CardDeck}from 'react-bootstrap';
 // import {CardGroup}from 'react-bootstrap';
 import {CardColumns} from 'react-bootstrap';
-import {ListGroup}from 'react-bootstrap';
+import {ListGroup,Button}from 'react-bootstrap';
+
 
 class HornedBeast extends Component {
 constructor(props){
@@ -23,7 +24,14 @@ changeVotes =()=>{
         votes:this.state.votes+1
     })
 }
-
+clickMe=()=>{
+    let data={
+        title:this.props.title,
+        image_url:this.props.image_url,
+        description:this.props.description
+    }
+    this.props.showModal(data)
+}
     render(){
         return(
             <div>
@@ -42,9 +50,10 @@ changeVotes =()=>{
     <ListGroup.Item><Card.Text>
     <i class="fas fa-heart">favorited: {this.state.votes}</i>
     </Card.Text></ListGroup.Item>
-  
+    <Button variant="secondary" onClick={this.clickMe}>Click </Button>
   </Card.Body>
   </ListGroup>
+  
  
 </Card>
 </div>
