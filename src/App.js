@@ -40,7 +40,7 @@ render(){
       
         <Main selectedModal={this. handleShowModal}
         data={this.state.hornsData}
-       viewBeasts={this.presentBeasts}  />
+       viewBeasts={this.viewBeasts}  />
         <SelectedBeast exit= {this.handleHideModal } showData={this.state.displayModal} dataForModal={this.state.modalData}/>
     <Footer />
     </div>

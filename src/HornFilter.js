@@ -13,7 +13,7 @@ export class HornFilter extends React.Component {
         const numOfHorns = parseInt(e.target.value);
         let   hornsData= hornsBeastData ;
         if (numOfHorns) {
-            hornsData  = hornsBeastData.filter((lilBeastie) => lilBeastie.horns === numOfHorns);
+            hornsData  = hornsBeastData.filter((item) => item.horns === numOfHorns);
         }
         this.props.viewBeasts(hornsData);
       }

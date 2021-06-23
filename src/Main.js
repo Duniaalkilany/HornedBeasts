@@ -14,7 +14,7 @@ class Main extends Component {
         return (
             <div class='card'>
                  <HornFilter
-          viewBeasts={this.props.presentBeasts} 
+          viewBeasts={this.props.viewBeasts} 
         />
         <div class='carrd'>
               <CardColumns >
