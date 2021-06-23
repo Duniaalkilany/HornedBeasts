@@ -1,0 +1,20 @@
+.title{
+    background-color: black;
+    color: white;
+  text-align: center;
+   /* margin-left: 100px; */
+   font-weight: bolder;
+   font-size: x-large;
+   padding-left: 50px;
+   padding-right: 50px;
+   
+}
+.text{
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+.head{
+    background-color: black;
+    text-align: center;
+}

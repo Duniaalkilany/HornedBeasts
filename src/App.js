@@ -5,7 +5,7 @@ import Main from './Main';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import SelectedBeast from './SelectedBeast';
-import hornsBeastData from './hornsBeastData .json';
+import hornsBeastData from './data.json';
 
 class App extends React.Component{
 
@@ -18,7 +18,7 @@ class App extends React.Component{
       modalData: {}
     }
   }
-  showModal = (data) => {
+  handleShowModal = (data) => {
 
     this.setState({
     displayModal:true,
@@ -26,19 +26,22 @@ class App extends React.Component{
   });
   }
 
-  hideModal = () => {this.setState({
+  handleHideModal = () => {this.setState({
     displayModal: false});
+}
+viewBeasts = (hornsData) => {this.setState({hornsData});
 }
  
 render(){
  
   return(
-    <div>
+    <div class='body'>
       <Header/>
       
-        <Main selectedModal={this.showModal}
-        data={this.state.hornsData} />
-        <SelectedBeast exit= {this.hideModal} showData={this.state.displayModal} dataForModal={this.state.modalData}/>
+        <Main selectedModal={this. handleShowModal}
+        data={this.state.hornsData}
+       viewBeasts={this.presentBeasts}  />
+        <SelectedBeast exit= {this.handleHideModal } showData={this.state.displayModal} dataForModal={this.state.modalData}/>
     <Footer />
     </div>
     

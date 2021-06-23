@@ -3,6 +3,7 @@
 import React, { Component } from 'react'
 
 import {Card,Modal,Button} from 'react-bootstrap'
+import './SelectedBeast.css';
 
  class SelectedBeast extends Component {
     render() {
@@ -10,18 +11,20 @@ import {Card,Modal,Button} from 'react-bootstrap'
             <div>
                 
       <Modal show={this.props.showData} >
-        <Modal.Header>
-          <Modal.Title>{this.props.dataForModal.title}</Modal.Title>
+          <div class='head'>
+        <Modal.Header >
+          <Modal.Title class='title' >{this.props.dataForModal.title}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-        <Card style={{ width: '26rem'}}>
-        <Card.Img src={this.props.dataForModal. image_url} />
+        </div>
+        <Modal.Body class='bdy'>
+        <Card style={{ width: '26rem',marginLeft:'40px'}  }>
+        <Card.Img src={this.props.dataForModal. image_url}  />
             <Card.Body>
               
-              <Card.Text>{this.props.dataForModal.description}</Card.Text>
+              <Card.Text class='text'>{this.props.dataForModal.description}</Card.Text>
              
              
-          <Button variant="secondary" onClick={this.props.exit}>
+          <Button style={{marginLeft:'150px'}} variant="secondary" onClick={this.props.exit}>
            close
           </Button>
             </Card.Body>
