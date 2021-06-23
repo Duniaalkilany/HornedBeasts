@@ -1,28 +1,43 @@
 import React, { Component } from 'react'
-import HornedBeast from './HornedBeast'
-import data from './data.json'
+import HornedBeast from './HornedBeast.js';
 import { CardColumns } from 'react-bootstrap'
 import './Main.css';
+import HornFilter from './HornFilter.js';
+
 class Main extends Component {
-    raiseVotes=(votes)=>{
-        return votes+1
-    }
+    // raiseVotes=(votes)=>{
+    //     return votes+1
+    // }
     render() {
         
               
         return (
             <div class='card'>
-              <CardColumns>
-              {data.map(beast=>{ return <HornedBeast 
-              title={beast.title} 
-              description={beast.description}
-               image_url={beast.image_url}
-                votes={beast.votes} 
-                totalVotes={this.raiseVotes}/>})
+                 <HornFilter
+          viewBeasts={this.props.presentBeasts} 
+        />
+        <div class='carrd'>
+              <CardColumns >
+              {
+              this.props.data.map(beast=>{ 
+                 return(
+                    <HornedBeast
+                    title={beast.title} 
+                    horns={beast.horns}
+                    description={beast.description}
+                     image_url={beast.image_url}
+                      votes={beast.votes} 
+                      totalVotes={this.raiseVotes}
+                      showModal={this.props.selectedModal}/>
+                     
+                 )
+              
                
-              }
+            })}
               </CardColumns>
-            </div>
+              
+</div>
+             </div>
         )
     }
 }
